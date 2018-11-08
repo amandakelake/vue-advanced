@@ -6,29 +6,27 @@
 </div>
 
 <script>
-  const Foo = {
-    render(h) {
-      return h('div', 'foo');
-    }
+const Foo = {
+  render (h) {
+    return h('div', 'foo')
   }
+}
 
-  const Bar = {
-    render(h) {
-      return h('div', 'bar');
-    }
+const Bar = {
+  render (h) {
+    return h('div', 'bar')
   }
+}
 
-  Vue.component('example', {
-    proos: ['ok'],
-    render(h) {
-      return h(this.ok ? Foo : Bar);
-    }
-  })
+Vue.component('example', {
+  props: ['ok'],
+  render (h) {
+    return h(this.ok ? Foo : Bar)
+  }
+})
 
-  new Vue({
-    el: '#app',
-    data: {
-      ok: true
-    }
-  })
+new Vue({
+  el: '#app',
+  data: { ok: true }
+})
 </script>
